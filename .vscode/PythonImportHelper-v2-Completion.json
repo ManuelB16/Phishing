@@ -1,0 +1,220 @@
+[
+    {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "messagebox",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "ttk",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "ollama",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "ollama",
+        "description": "ollama",
+        "detail": "ollama",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "classification_report",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "confusion_matrix",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "accuracy_score",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "classification_report",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "analizar_correos",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def analizar_correos():\n    try:\n        with open(\"data/emails.csv\", \"r\", encoding=\"utf-8\") as f:\n            reader = csv.DictReader(f)\n            correos = list(reader)\n    except FileNotFoundError:\n        messagebox.showerror(\"Error\", \"No se encontró data/emails.csv\")\n        return\n    resultados = []\n    for correo in correos:",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "ventana",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "ventana = tk.Tk()\nventana.title(\"Detector de Phishing - LLM\")\nventana.geometry(\"800x500\")\nventana.config(bg=\"#f4f4f4\")\ntk.Label(ventana, text=\"Detector de correos desde emails.csv\", font=(\"Arial\", 14, \"bold\"), bg=\"#f4f4f4\").pack(pady=10)\nbtn = tk.Button(ventana, text=\"Analizar correos\", command=analizar_correos, bg=\"#4CAF50\", fg=\"white\", width=20)\nbtn.pack(pady=10)\n# Tabla de resultados\ncolumns = (\"Asunto\", \"Cuerpo\", \"Clasificación\")\ntree = ttk.Treeview(ventana, columns=columns, show=\"headings\", height=15)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "btn",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "btn = tk.Button(ventana, text=\"Analizar correos\", command=analizar_correos, bg=\"#4CAF50\", fg=\"white\", width=20)\nbtn.pack(pady=10)\n# Tabla de resultados\ncolumns = (\"Asunto\", \"Cuerpo\", \"Clasificación\")\ntree = ttk.Treeview(ventana, columns=columns, show=\"headings\", height=15)\nfor col in columns:\n    tree.heading(col, text=col)\n    tree.column(col, width=250)\ntree.pack(pady=10)\nventana.mainloop()",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "columns",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "columns = (\"Asunto\", \"Cuerpo\", \"Clasificación\")\ntree = ttk.Treeview(ventana, columns=columns, show=\"headings\", height=15)\nfor col in columns:\n    tree.heading(col, text=col)\n    tree.column(col, width=250)\ntree.pack(pady=10)\nventana.mainloop()",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "tree",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "tree = ttk.Treeview(ventana, columns=columns, show=\"headings\", height=15)\nfor col in columns:\n    tree.heading(col, text=col)\n    tree.column(col, width=250)\ntree.pack(pady=10)\nventana.mainloop()",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "def main():\n    try:\n        df = pd.read_csv(CSV_PATH)\n    except FileNotFoundError:\n        print(f\"[ERROR] No se encontró el archivo: {CSV_PATH}\")\n        sys.exit(1)\n    # Comprobar columnas\n    if \"label\" not in df.columns or \"pred\" not in df.columns:\n        print(\"[ERROR] El CSV debe contener al menos las columnas 'label' y 'pred'.\")\n        print(\"Columnas encontradas:\", list(df.columns))",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "CSV_PATH",
+        "kind": 5,
+        "importPath": "evaluate",
+        "description": "evaluate",
+        "peekOfCode": "CSV_PATH = \"data/results.csv\"\ndef main():\n    try:\n        df = pd.read_csv(CSV_PATH)\n    except FileNotFoundError:\n        print(f\"[ERROR] No se encontró el archivo: {CSV_PATH}\")\n        sys.exit(1)\n    # Comprobar columnas\n    if \"label\" not in df.columns or \"pred\" not in df.columns:\n        print(\"[ERROR] El CSV debe contener al menos las columnas 'label' y 'pred'.\")",
+        "detail": "evaluate",
+        "documentation": {}
+    },
+    {
+        "label": "classify_email",
+        "kind": 2,
+        "importPath": "phishing_local",
+        "description": "phishing_local",
+        "peekOfCode": "def classify_email(subject, body):\n    prompt = f\"\"\"\nEres un analista de ciberseguridad. Clasifica el siguiente correo como PHISHING o LEGÍTIMO.\nSolo responde con una palabra: PHISHING o LEGÍTIMO.\nLuego da una breve explicación (una sola línea).\nAsunto: {subject}\nCuerpo:\n{body}\n\"\"\"\n    payload = {\"model\": MODEL, \"prompt\": prompt}",
+        "detail": "phishing_local",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "phishing_local",
+        "description": "phishing_local",
+        "peekOfCode": "def main():\n    df = pd.read_csv(\"data/emails.csv\")\n    preds, reasons = [], []\n    print(f\"Clasificando {len(df)} correos con {MODEL} en Ollama...\")\n    for _, row in tqdm(df.iterrows(), total=len(df)):\n        label, reason = classify_email(row[\"subject\"], row[\"body\"])\n        preds.append(label)\n        reasons.append(reason)\n    df[\"pred\"] = preds\n    df[\"reason\"] = reasons",
+        "detail": "phishing_local",
+        "documentation": {}
+    },
+    {
+        "label": "OLLAMA_URL",
+        "kind": 5,
+        "importPath": "phishing_local",
+        "description": "phishing_local",
+        "peekOfCode": "OLLAMA_URL = \"http://localhost:11434/api/generate\"\nMODEL = \"mistral\"   # o \"llama3\"\ndef classify_email(subject, body):\n    prompt = f\"\"\"\nEres un analista de ciberseguridad. Clasifica el siguiente correo como PHISHING o LEGÍTIMO.\nSolo responde con una palabra: PHISHING o LEGÍTIMO.\nLuego da una breve explicación (una sola línea).\nAsunto: {subject}\nCuerpo:\n{body}",
+        "detail": "phishing_local",
+        "documentation": {}
+    },
+    {
+        "label": "MODEL",
+        "kind": 5,
+        "importPath": "phishing_local",
+        "description": "phishing_local",
+        "peekOfCode": "MODEL = \"mistral\"   # o \"llama3\"\ndef classify_email(subject, body):\n    prompt = f\"\"\"\nEres un analista de ciberseguridad. Clasifica el siguiente correo como PHISHING o LEGÍTIMO.\nSolo responde con una palabra: PHISHING o LEGÍTIMO.\nLuego da una breve explicación (una sola línea).\nAsunto: {subject}\nCuerpo:\n{body}\n\"\"\"",
+        "detail": "phishing_local",
+        "documentation": {}
+    }
+]
